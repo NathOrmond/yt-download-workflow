@@ -46,3 +46,20 @@ chmod +x download_videos.sh
 ./download_videos.sh
 ```
 
+
+## To Edit Clips 
+
+- use the `edit-clips.sh` file 
+
+- Add timestamps for the clips you want to edit
+```zsh
+declare -a segments=(
+    "ss ss"
+)
+```
+
+- Run script against video file
+```zsh
+./edit-clis.sh $VIDEO_EXPORT_DIR/my_file.mp4
+```
+
