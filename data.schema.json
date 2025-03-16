@@ -1,0 +1,50 @@
+{
+"$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "YouTube Download & Clip Configuration",
+  "description": "Schema for configuring YouTube video downloads and clip extractions",
+  "type": "object",
+  "required": ["exports"],
+  "properties": {
+    "exports": {
+      "type": "array",
+      "description": "List of videos to download and process",
+      "items": {
+        "type": "object",
+        "required": ["title", "url", "clips"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the video (used for filename)",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "description": "YouTube URL of the video",
+            "pattern": "^https?://(www\\.)?(youtube\\.com|youtu\\.be)/.*$",
+            "minLength": 1
+          },
+          "clips": {
+            "type": "array",
+            "description": "List of clips to extract from the video",
+            "items": {
+              "type": "object",
+              "required": ["start", "end"],
+              "properties": {
+                "start": {
+                  "type": "string",
+                  "description": "Start timestamp (HH:MM:SS or seconds)",
+                  "pattern": "^([0-9]+:[0-5][0-9]:[0-5][0-9]|[0-9]+)$"
+                },
+                "end": {
+                  "type": "string",
+                  "description": "End timestamp (HH:MM:SS or seconds)",
+                  "pattern": "^([0-9]+:[0-5][0-9]:[0-5][0-9]|[0-9]+)$"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

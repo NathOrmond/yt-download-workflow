@@ -1,5 +1,4 @@
-
-wnloader Workflow
+# YT Downloader Workflow
 
 > This is a repo to speed up some stuff I do that involves downloading video from YouTube for editing. It's a personal thing, but if it's useful for you let me know and if you want me to build on this in any way let me know (though most of the core functionality is part of the yt-dlp project)
 
@@ -20,9 +19,14 @@ sudo apt install jq
 sudo apt install ffmpeg
 ```
 
-4. Make sure all scripts are executable
+4. For JSON schema validation, you'll need ajv-cli (optional)
 ```zsh
-chmod +x yt-workflow.sh download-videos.sh edit-clips.sh
+npm install -g ajv-cli ajv-formats
+```
+
+5. Make sure all scripts are executable
+```zsh
+chmod +x yt-workflow.sh download-videos.sh edit-clips.sh validate-json.sh
 ```
 
 5. Configure your videos and clips in the `data.json` file (see below for schema)
@@ -73,7 +77,30 @@ The `data.json` file now uses a more detailed structure to specify videos and cl
   - `start`: Starting timestamp (HH:MM:SS or seconds)
   - `end`: Ending timestamp (HH:MM:SS or seconds)
 
+### Timestamp Format
+
+The tool supports two timestamp formats:
+1. HH:MM:SS format (e.g., "01:23:45" for 1 hour, 23 minutes, 45 seconds)
+2. Seconds as a number (e.g., "3661" for 1 hour, 1 minute, 1 second)
+
+For HH:MM:SS format:
+- Hours can be any number (0+)
+- Minutes must be 00-59
+- Seconds must be 00-59
+
+> **Note:** To specify a clip from a specific time to the end of the video, just use the end timestamp of the video.
+
 Each clip will be output as `{title}_clip_{number}.mp4` where `number` starts from 1.
+
+### Validating Your JSON
+
+You can validate your data.json file against the schema using the included script:
+
+```zsh
+./validate-json.sh
+```
+
+This will check that your configuration is correctly formatted and that all timestamps are valid.
 
 ## Running the Workflow
 
