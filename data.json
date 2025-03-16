@@ -1,3 +1,57 @@
-[
+v[
+rts": [
+    {
+      "title": "Intro to Data Science",
+      "url": "https://youtu.be/roAlbt6ilms?si=u3NklPgo25r7v4yJ",
+      "clips": [
+        {
+          "start": "00:01:15",
+          "end": "00:02:30"
+        },
+        {
+          "start": "00:05:45",
+          "end": "00:07:20"
+        }
+      ]
+    },
+    {
+      "title": "Advanced Statistics",
+      "url": "https://youtu.be/anotherexample",
+      "clips": [
+        {
+          "start": "00:10:00",
+          "end": "00:12:30"
+        }
+      ]
+    }
+  ]
+}
+rts": [
+    {
+      "title": "Intro to Data Science",
+      "url": "https://youtu.be/roAlbt6ilms?si=u3NklPgo25r7v4yJ",
+      "clips": [
+        {
+          "start": "00:01:15",
+          "end": "00:02:30"
+        },
+        {
+          "start": "00:05:45",
+          "end": "00:07:20"
+        }
+      ]
+    },
+    {
+      "title": "Advanced Statistics",
+      "url": "https://youtu.be/anotherexample",
+      "clips": [
+        {
+          "start": "00:10:00",
+          "end": "00:12:30"
+        }
+      ]
+    }
+  ]
+}
   "https://youtu.be/roAlbt6ilms?si=u3NklPgo25r7v4yJ"
 ]
