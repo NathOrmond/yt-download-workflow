@@ -10,7 +10,7 @@
       "description": "List of videos to download and process",
       "items": {
         "type": "object",
-        "required": ["title", "url", "clips"],
+        "required": ["title", "url"],
         "properties": {
           "title": {
             "type": "string",

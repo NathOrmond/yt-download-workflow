@@ -1,13 +1,9 @@
 {
 "exports": [
     {
-      "title": "Example Video",
-      "url": "https://youtu.be/example123",
+      "title": "JamesMeLanguagePt1",
+      "url": "https://www.youtube.com/live/8JlV2hpsNiQ?si=eyK93pm0BSZEOLSe",
       "clips": [
-        {
-          "start": "02:30:45",
-          "end": "03:43:37"
-        }
       ]
     }
   ]
