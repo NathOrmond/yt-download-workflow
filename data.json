@@ -1,9 +1,12 @@
 {
 "exports": [
     {
-      "title": "JamesMeLanguagePt1",
-      "url": "https://www.youtube.com/live/8JlV2hpsNiQ?si=eyK93pm0BSZEOLSe",
+      "title": "LukeConversation",
+      "url": "https://www.youtube.com/live/SNRINgzifcI?si=4uPCkoMnzXxphVAd",
       "clips": [
+        {
+          "split": "00:20:33"
+        }
       ]
     }
   ]

@@ -62,8 +62,7 @@ The `data.json` file now uses a more detailed structure to specify videos and cl
           "end": "00:02:30"
         },
         {
-          "start": "00:05:45",
-          "end": "00:07:20"
+          "split": "00:03:00"
         }
       ]
     }
@@ -76,6 +75,26 @@ The `data.json` file now uses a more detailed structure to specify videos and cl
 - `clips`: Array of clip segments to extract
   - `start`: Starting timestamp (HH:MM:SS or seconds)
   - `end`: Ending timestamp (HH:MM:SS or seconds)
+
+### Splitting a Video
+
+Instead of providing a `start` and `end`, you can now use a `split` timestamp to divide a video into two clips. The first clip will run from the beginning of the video to the `split` time, and the second will run from the `split` time to the end of the video.
+
+Example of a `split`:
+
+```json
+{
+  "clips": [
+    {
+      "split": "00:05:10"
+    }
+  ]
+}
+```
+
+This will produce two files:
+- `{title}_clip_{number}_part_1.mp4`
+- `{title}_clip_{number}_part_2.mp4`
 
 ### Timestamp Format
 

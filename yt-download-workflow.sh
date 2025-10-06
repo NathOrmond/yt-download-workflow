@@ -1,4 +1,5 @@
-reate output directory if VIDEO_EXPORT_DIR is not set
+#!/bin/bash
+# Create output directory if VIDEO_EXPORT_DIR is not set
 if [ -z "$VIDEO_EXPORT_DIR" ]; then
     echo "VIDEO_EXPORT_DIR not set. Would you like to specify an export directory? (y/n)"
     read response

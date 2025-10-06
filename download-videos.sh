@@ -1,4 +1,6 @@
-heck if yt-dlp is installed
+#!/bin/bash
+
+# Check if yt-dlp is installed
 if ! command -v yt-dlp &> /dev/null; then
     echo "yt-dlp not installed"
     exit 1
@@ -59,7 +61,11 @@ for i in $(seq 0 $(($export_count - 1))); do
     # Replace spaces with underscores and remove special characters
     safe_title=$(echo "$title" | tr ' ' '_' | tr -cd '[:alnum:]_-')
     
-    yt-dlp -f "mp4" \
+    # Download with format selection and fallback options
+    # -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b" provides fallback formats
+    # --merge-output-format mp4 ensures mp4 output
+    yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b" \
+        --merge-output-format mp4 \
         -o "$VIDEO_EXPORT_DIR/$safe_title.%(ext)s" \
         "$url"
     
